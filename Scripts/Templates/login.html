@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Digital Uzhavar Sandhai Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="main">
+        <h1>Digital Uzhavar Sandhai</h1>
+        <h3>Register for an account</h3>
+        <form action="{{ url_for('register') }}" method="POST">
+
+
+            <label for="first">
+                Username:
+            </label>
+            <input type="text"
+                id="first"
+                name="first"
+                placeholder="Enter your Username" required>
+
+            <label for="password">
+                Password:
+            </label>
+            <input type="password"
+                id="password"
+                name="password"
+                placeholder="Enter your Password" required>
+
+				<div class="wrap">
+					<button type="submit">
+						Register
+					</button>
+				</div>
+			</form>
+			<p>Already have an account? 
+				<a href="{{ url_for('login') }}"
+				style="text-decoration: none;">
+					Log in
+				</a>
+			</p>
+		</div>
+	</body>
+	</html>

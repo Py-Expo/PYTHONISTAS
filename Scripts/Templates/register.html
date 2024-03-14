@@ -1,0 +1,64 @@
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+    <title>Registration Form</title> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head> 
+
+<body> 
+    <div class="main"> 
+        <h1>Digital Uzhavar Sandhai</h1> 
+        <form action="{{ url_for('register') }}" method="POST"> 
+            <label for="first">First Name:</label> 
+            <input type="text" id="first"
+                name="first"
+                placeholder="Enter your first name" required> 
+
+            <label for="last">Last Name:</label> 
+            <input type="text" id="last"
+                name="last"
+                placeholder="Enter your last name" required> 
+
+            <label for="email">Email:</label> 
+            <input type="email" id="email"
+                name="email"
+                placeholder="Enter your email" required>  
+              
+            <label for="password">Password:</label> 
+            <input type="password" id="password"
+                name="password"
+                placeholder="Enter your password"
+                pattern="^(?=.*\d)(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9])\S{8,}$" required                 
+                title="Password must contain at least one number, 
+                    one alphabet, one symbol, and be at 
+                    least 8 characters long"> 
+
+            <label for="repassword">Re-type Password:</label> 
+            <input type="password" id="repassword"
+                name="repassword"
+                placeholder="Re-Enter your password" required> 
+            <span id="pass"></span> 
+
+            <label for="Address">Address:</label> 
+            <input type="Address" id="Address"
+                name="Address"
+                placeholder="Enter your Address" required>
+
+            <label for="mobile">Contact:</label> 
+            <input type="text" id="mobile"
+                name="mobile"
+                placeholder="Enter your Mobile Number" required 
+                maxlength="10"> 
+
+            <div class="wrap"> 
+                <button type="submit"> 
+                Submit 
+                </button> 
+            </div> 
+            <h4> Already have an account <a href="{{ url_for('login') }}">Login</a></h4>
+        </form> 
+    </div> 
+</body> 
+
+</html>
